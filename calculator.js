@@ -32,6 +32,12 @@ prompt(`${number1} and ${number2}`);
 prompt('What operation would you like to operate on the numbers?')
 let operation = readline.question();
 
+while (!['1','2','3','4'].includes(operation)){
+    prompt('Please pick between 1-4')
+    operation = readline.question();
+}
+
+
 let output;
 
 switch(operation){
