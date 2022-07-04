@@ -4,14 +4,28 @@ function prompt(message){
     console.log(`=> ${message}`);
 }
 
+function invalidNumber(userInput){
+    return userInput.trimStart() === "" || Number.isNaN(Number(userInput));
+}
+
 prompt('Welcome to Calculator!');
 
 prompt('What is the first number?');
 let number1 = readline.question();
 
+while (invalidNumber(number1)){
+    prompt("Hmmm...you entered a wrong number")
+    number1 = readline.question();
+}
+
 
 prompt('What is the second number?');
 let number2 = readline.question();
+
+while (invalidNumber(number2)){
+    prompt("Hmmm...you entered a wrong number")
+    number2 = readline.question();
+}
 
 prompt(`${number1} and ${number2}`);
 
